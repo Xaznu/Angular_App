@@ -1,16 +1,14 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './header/header.component';
-import { SurnameShortcutPipe } from './pipes/surname-shortcut.pipe';
-import { ImportantDirective } from './directives/important.directive';
+import { Pipe, PipeTransform } from '@angular/core';
 
-@NgModule({
-  imports: [
-    CommonModule
-  ],
-  exports: [HeaderComponent, SurnameShortcutPipe, ImportantDirective],
-  declarations: [HeaderComponent, SurnameShortcutPipe, ImportantDirective]
+@Pipe({
+  name: 'surnameShortcut'
 })
-export class SharedModule {
-}
+export class SurnameShortcutPipe implements PipeTransform {
 
+  transform(value: string): string {
+    if (!value) {
+      return '';
+    }
+    return value.charAt(0) + '.';
+  }
+}
