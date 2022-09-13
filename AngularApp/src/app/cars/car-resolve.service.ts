@@ -12,3 +12,6 @@ export class CarResolve implements Resolve<Car> {
   }
 }
 }
+}
+}
+
