@@ -15,3 +15,4 @@ export class TotalCostComponent {
     this.shownGross.emit(this.totalCost * this.VAT);
   }
 }
+}
